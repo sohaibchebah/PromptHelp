@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    
     serverComponentsExternalPackages: ["mongoose"],
   },
   images: {
@@ -14,6 +13,9 @@ const nextConfig = {
     };
     return config;
   },
+  output: "export",
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/PromptopiaHelp" : "",
 };
 
 export default nextConfig;
